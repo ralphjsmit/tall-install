@@ -2,9 +2,9 @@
 
 namespace RalphJSmit\TallInstall;
 
+use RalphJSmit\TallInstall\Commands\TallInstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RalphJSmit\TallInstall\Commands\TallInstallCommand;
 
 class TallInstallServiceProvider extends PackageServiceProvider
 {

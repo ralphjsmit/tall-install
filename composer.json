@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ralphjsmit/tall-install",
+    "description": "Quickly scaffold a new Laravel-installation that uses the TALL-stack and install several opinionated packages.",
     "keywords": [
-        ":vendor_name",
+        "ralphjsmit",
         "laravel",
-        ":package_slug"
+        "tall-install"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ralphjsmit/tall-install",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Ralph J. Smit",
+            "email": "rjs@ralphjsmit.com",
             "role": "Developer"
         }
     ],
@@ -22,25 +22,21 @@
     },
     "require-dev": {
         "nunomaduro/collision": "^5.10",
-        "nunomaduro/larastan": "^1.0",
         "orchestra/testbench": "^6.22",
         "pestphp/pest": "^1.21",
         "pestphp/pest-plugin-laravel": "^1.1",
-        "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.5",
         "spatie/laravel-ray": "^1.26"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "RalphJSmit\\TallInstall\\": "src",
+            "RalphJSmit\\TallInstall\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "RalphJSmit\\TallInstall\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "RalphJSmit\\TallInstall\\TallInstallServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "TallInstall": "RalphJSmit\\TallInstall\\Facades\\TallInstall"
             }
         }
     },

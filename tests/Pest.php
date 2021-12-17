@@ -1,12 +1,12 @@
 <?php
 
-use RalphJSmit\TallInstall\Tests\TestCase;
-
 use function RalphJSmit\PestPluginFilesystem\rmdir_recursive;
+
+use RalphJSmit\TallInstall\Tests\TestCase;
 
 uses(TestCase::class)
     ->beforeEach(function () {
-        if ( file_exists(__DIR__ . '/tmp') ) {
+        if (file_exists(__DIR__ . '/tmp')) {
             rmdir_recursive(__DIR__ . '/tmp');
         }
 
@@ -17,7 +17,7 @@ uses(TestCase::class)
 
 function prepareEnvironment()
 {
-    if ( file_exists(__DIR__ . '/testing') ) {
+    if (file_exists(__DIR__ . '/testing')) {
         rmdir_recursive(__DIR__ . '/testing');
     }
 

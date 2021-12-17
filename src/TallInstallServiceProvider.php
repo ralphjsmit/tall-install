@@ -10,9 +10,6 @@ class TallInstallServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        if (true) {
-            echo '';
-        }
         $package
             ->name('tall-install')
             ->hasCommand(TallInstallCommand::class);

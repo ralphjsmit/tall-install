@@ -1,62 +1,70 @@
 {
-    "name": "ralphjsmit/tall-install",
-    "description": "Quickly scaffold a new Laravel-installation that uses the TALL-stack and install several opinionated packages.",
-    "keywords": [
-        "ralphjsmit",
-        "laravel",
-        "tall-install"
-    ],
-    "homepage": "https://github.com/ralphjsmit/tall-install",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Ralph J. Smit",
-            "email": "rjs@ralphjsmit.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^8.73"
-    },
-    "require-dev": {
-        "nunomaduro/collision": "^5.10",
-        "orchestra/testbench": "^6.22",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
-        "phpunit/phpunit": "^9.5",
-        "spatie/laravel-ray": "^1.26"
-    },
-    "autoload": {
-        "psr-4": {
-            "RalphJSmit\\TallInstall\\": "src",
-            "RalphJSmit\\TallInstall\\Database\\Factories\\": "database/factories"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "RalphJSmit\\TallInstall\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest coverage"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "RalphJSmit\\TallInstall\\TallInstallServiceProvider"
-            ],
-            "aliases": {
-                "TallInstall": "RalphJSmit\\TallInstall\\Facades\\TallInstall"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "ralphjsmit/tall-install",
+  "description": "Quickly scaffold a new Laravel-installation that uses the TALL-stack and install several opinionated packages.",
+  "keywords": [
+    "ralphjsmit",
+    "laravel",
+    "tall-install"
+  ],
+  "homepage": "https://github.com/ralphjsmit/tall-install",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ralph J. Smit",
+      "email": "rjs@ralphjsmit.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "spatie/laravel-package-tools": "^1.9.2",
+    "illuminate/contracts": "^8.73"
+  },
+  "require-dev": {
+    "nunomaduro/collision": "^5.10",
+    "orchestra/testbench": "^6.22",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-laravel": "^1.1",
+    "phpunit/phpunit": "^9.5",
+    "spatie/laravel-ray": "^1.26",
+    "symfony/process": "^5.2",
+    "ralphjsmit/pest-plugin-filesystem": "@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "RalphJSmit\\TallInstall\\": "src",
+      "RalphJSmit\\TallInstall\\Database\\Factories\\": "database/factories"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RalphJSmit\\TallInstall\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RalphJSmit\\TallInstall\\TallInstallServiceProvider"
+      ],
+      "aliases": {
+        "TallInstall": "RalphJSmit\\TallInstall\\Facades\\TallInstall"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/Users/ralphjsmit/Library/Mobile Documents/com~apple~CloudDocs/Work/Development/Packages/pest-plugin-filesystem"
+    }
+  ]
 }

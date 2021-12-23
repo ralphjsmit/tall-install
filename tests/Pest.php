@@ -1,14 +1,14 @@
 <?php
 
-use RalphJSmit\TallInstall\Tests\TestCase;
-use Symfony\Component\Filesystem\Filesystem;
-
 use function RalphJSmit\PestPluginFilesystem\rm;
 use function RalphJSmit\PestPluginFilesystem\rmdir_recursive;
 
+use RalphJSmit\TallInstall\Tests\TestCase;
+use Symfony\Component\Filesystem\Filesystem;
+
 uses(TestCase::class)
     ->beforeEach(function () {
-        if ( file_exists(__DIR__ . '/tmp') ) {
+        if (file_exists(__DIR__ . '/tmp')) {
             rmdir_recursive(__DIR__ . '/tmp');
         }
 

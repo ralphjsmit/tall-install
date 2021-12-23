@@ -14,7 +14,8 @@ class TallInstallAction
         private InstallFilamentAction $installFilamentAction,
         private InstallTailwindCSSAction $installTailwindCSSAction,
         private InitTailwindCSSAction $initTailwindCSSAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath = null)
     {

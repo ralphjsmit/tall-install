@@ -8,7 +8,8 @@ class InstallFilamentAction
 {
     public function __construct(
         private ComposerInstallAction $composerInstallAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath)
     {

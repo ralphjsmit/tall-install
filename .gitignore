@@ -13,4 +13,5 @@ vendor
 vendor.nosync
 node_modules
 node_modules.nosync
+tests/tmp
 .php-cs-fixer.cache

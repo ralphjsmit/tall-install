@@ -1,26 +1,27 @@
 <?php
 
-use function RalphJSmit\PestPluginFilesystem\rmdir_recursive;
-
 use RalphJSmit\TallInstall\Tests\TestCase;
+
+use function RalphJSmit\PestPluginFilesystem\rm;
+use function RalphJSmit\PestPluginFilesystem\rmdir_recursive;
 
 uses(TestCase::class)
     ->beforeEach(function () {
-        if (file_exists(__DIR__ . '/tmp')) {
+        if ( file_exists(__DIR__ . '/tmp') ) {
             rmdir_recursive(__DIR__ . '/tmp');
         }
 
         mkdir(__DIR__ . '/tmp', 0777, true);
 
         prepareEnvironment();
-    })->in(__DIR__);
+    })->in('Feature', 'Unit');
 
 function prepareEnvironment()
 {
-    if (file_exists(__DIR__ . '/testing')) {
-        rmdir_recursive(__DIR__ . '/testing');
-    }
+    rm(__DIR__ . '/tmp');
+    mkdir(__DIR__ . '/tmp', 0777, true);
 
-    mkdir('/testing', 0777, true);
-    //    ( new Process(['cd']) )->run();
+    $filesystem = new \Symfony\Component\Filesystem\Filesystem();
+
+    $filesystem->mirror(__DIR__ . '/../fixtures/laravel-8.x', __DIR__ . '/tmp/laravel');
 }

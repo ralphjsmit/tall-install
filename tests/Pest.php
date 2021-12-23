@@ -1,6 +1,7 @@
 <?php
 
 use RalphJSmit\TallInstall\Tests\TestCase;
+use Symfony\Component\Filesystem\Filesystem;
 
 use function RalphJSmit\PestPluginFilesystem\rm;
 use function RalphJSmit\PestPluginFilesystem\rmdir_recursive;
@@ -21,7 +22,7 @@ function prepareEnvironment()
     rm(__DIR__ . '/tmp');
     mkdir(__DIR__ . '/tmp', 0777, true);
 
-    $filesystem = new \Symfony\Component\Filesystem\Filesystem();
+    $filesystem = new Filesystem();
 
     $filesystem->mirror(__DIR__ . '/../fixtures/laravel-8.x', __DIR__ . '/tmp/laravel');
 }

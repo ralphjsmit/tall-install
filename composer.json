@@ -19,7 +19,8 @@
     "php": "^8.0",
     "illuminate/contracts": "^8.73",
     "spatie/laravel-package-tools": "^1.9.2",
-    "symfony/filesystem": "^6.0"
+    "symfony/filesystem": "^6.0",
+    "symfony/process": "^5.0"
   },
   "require-dev": {
     "nunomaduro/collision": "^5.10",
@@ -28,14 +29,16 @@
     "pestphp/pest-plugin-laravel": "^1.1",
     "phpunit/phpunit": "^9.5",
     "spatie/laravel-ray": "^1.26",
-    "symfony/process": "^5.2",
     "ralphjsmit/pest-plugin-filesystem": "@dev"
   },
   "autoload": {
     "psr-4": {
       "RalphJSmit\\TallInstall\\": "src",
       "RalphJSmit\\TallInstall\\Database\\Factories\\": "database/factories"
-    }
+    },
+    "files": [
+      "src/Support/helpers.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {

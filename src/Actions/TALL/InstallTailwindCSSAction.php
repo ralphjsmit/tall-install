@@ -8,7 +8,8 @@ class InstallTailwindCSSAction
 {
     public function __construct(
         private NpmInstallAction $npmInstallAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

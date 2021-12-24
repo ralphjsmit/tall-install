@@ -6,7 +6,8 @@ class NpmInstallAction
 {
     public function __construct(
         private NpmAction $npmAction,
-    ) {}
+    ) {
+    }
 
     public function execute(array $arguments, string $basepath): void
     {

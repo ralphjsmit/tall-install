@@ -2,13 +2,12 @@
 
 namespace RalphJSmit\TallInstall\Actions\Composer;
 
-use RalphJSmit\TallInstall\Exceptions\ComposerRequireFailedException;
-
 class ComposerInstallAction
 {
     public function __construct(
         private ComposerAction $composerAction,
-    ) {}
+    ) {
+    }
 
     public function execute(array $arguments, string $basepath): void
     {

@@ -26,7 +26,8 @@ class TallInstallAction
         private InstallBladeAction $installBladeAction,
         private InstallTodoAction $installTodoAction,
         private InstallGitignoreAction $installGitignoreAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath = null)
     {

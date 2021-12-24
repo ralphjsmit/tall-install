@@ -4,6 +4,7 @@ namespace RalphJSmit\TallInstall\Actions;
 
 use RalphJSmit\TallInstall\Actions\TALL\InitTailwindCSSAction;
 use RalphJSmit\TallInstall\Actions\TALL\InstallAlpineAction;
+use RalphJSmit\TallInstall\Actions\TALL\InstallAssetsAction;
 use RalphJSmit\TallInstall\Actions\TALL\InstallFilamentAction;
 use RalphJSmit\TallInstall\Actions\TALL\InstallLivewireAction;
 use RalphJSmit\TallInstall\Actions\TALL\InstallTailwindCSSAction;
@@ -18,6 +19,7 @@ class TallInstallAction
         private InitTailwindCSSAction $initTailwindCSSAction,
         private InstallLivewireAction $installLivewireAction,
         private InstallToastAction $installToastAction,
+        private InstallAssetsAction $installAssetsAction,
     ) {}
 
     public function execute(string $basePath = null)
@@ -28,5 +30,6 @@ class TallInstallAction
         $this->initTailwindCSSAction->execute($basePath);
         $this->installLivewireAction->execute($basePath);
         $this->installToastAction->execute($basePath);
+        $this->installAssetsAction->execute($basePath);
     }
 }

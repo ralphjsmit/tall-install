@@ -4,27 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'defaults.css';
+@import 'pages.css';
+
 [x-cloak] {
     display: none !important;
-}
-
-h1, h2, h3 {
-    @apply font-extrabold tracking-normal;
-    @apply mb-2;
-}
-
-h1 {
-    @apply text-2xl lg:text-3xl;
-}
-
-h2 {
-    @apply text-lg md:text-xl;
-}
-
-h3 {
-    @apply text-3xl md:text-3xl;
-}
-
-p {
-    @apply text-gray-400;
 }

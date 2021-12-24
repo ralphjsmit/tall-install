@@ -34,6 +34,8 @@ it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/app/View/Components/Layouts/Admin.php')->not->toExist();
     expect($this->prefix . '/app/Providers/BladeServiceProvider.php')->not->toExist();
     expect($this->prefix . '/todo')->not->toExist();
+    expect($this->prefix . '/.gitignore')->contents->not->toContain('vendor.nosync');
+    expect($this->prefix . '/.gitignore')->contents->not->toContain('node_modules.nosync');
 
     app(TallInstallAction::class)->execute($this->prefix);
 
@@ -61,4 +63,6 @@ it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/app/View/Components/Layouts/Admin.php')->toHaveContents(contents(stub('app/View/Components/Layouts/Admin.php')));
     expect($this->prefix . '/app/Providers/BladeServiceProvider.php')->toHaveContents(contents(stub('app/Providers/BladeServiceProvider.php')));
     expect($this->prefix . '/todo')->toExist();
+    expect($this->prefix . '/.gitignore')->contents->toContain('vendor.nosync');
+    expect($this->prefix . '/.gitignore')->contents->toContain('node_modules.nosync');
 });

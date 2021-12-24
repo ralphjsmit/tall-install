@@ -2,6 +2,7 @@
 
 namespace RalphJSmit\TallInstall\Actions;
 
+use RalphJSmit\TallInstall\Actions\General\InstallGitignoreAction;
 use RalphJSmit\TallInstall\Actions\General\InstallTodoAction;
 use RalphJSmit\TallInstall\Actions\TALL\InitTailwindCSSAction;
 use RalphJSmit\TallInstall\Actions\TALL\InstallAlpineAction;
@@ -24,6 +25,7 @@ class TallInstallAction
         private InstallAssetsAction $installAssetsAction,
         private InstallBladeAction $installBladeAction,
         private InstallTodoAction $installTodoAction,
+        private InstallGitignoreAction $installGitignoreAction,
     ) {}
 
     public function execute(string $basePath = null)
@@ -37,5 +39,6 @@ class TallInstallAction
         $this->installAssetsAction->execute($basePath);
         $this->installBladeAction->execute($basePath);
         $this->installTodoAction->execute($basePath);
+        $this->installGitignoreAction->execute($basePath);
     }
 }

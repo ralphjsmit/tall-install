@@ -14,11 +14,11 @@ class TallInstallCommand extends Command
     public function handle(
         TallInstallAction $tallInstallAction,
     ): int {
-        $this->comment('Starting install...');
+        $this->info('Starting install...');
 
         $tallInstallAction->execute();
 
-        $this->comment('Installation finished.');
+        $this->info('Installation finished.');
 
         return self::SUCCESS;
     }

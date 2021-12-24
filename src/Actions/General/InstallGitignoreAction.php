@@ -9,8 +9,7 @@ class InstallGitignoreAction
 {
     public function __construct(
         private FileGetContentsAction $fileGetContentsAction,
-    ) {
-    }
+    ) {}
 
     public function execute(string $basePath): void
     {
@@ -27,8 +26,6 @@ class InstallGitignoreAction
             "/node_modules\n",
             "/node_modules\n/node_modules.nosync\n"
         );
-
-        dump($gitignore);
 
         file_put_contents($basePath . "/.gitignore", (string) $gitignore);
     }

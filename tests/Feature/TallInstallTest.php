@@ -1,11 +1,11 @@
 <?php
 
-use function RalphJSmit\PestPluginFilesystem\contents;
-
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
 
+use function RalphJSmit\PestPluginFilesystem\contents;
+
 beforeEach(function () {
-    $this->prefix = __DIR__ . '/../tmp/laravel';
+    $this->prefix = __DIR__ . '/../tmp/laravel-8.x';
 });
 
 it('can install the TALL-stack into any project', function () {

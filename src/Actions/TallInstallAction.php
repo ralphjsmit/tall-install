@@ -26,11 +26,12 @@ class TallInstallAction
         private InstallBladeAction $installBladeAction,
         private InstallTodoAction $installTodoAction,
         private InstallGitignoreAction $installGitignoreAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath = null)
     {
-        if ( ! $basePath ) {
+        if (! $basePath) {
             $basePath = base_path();
         }
 

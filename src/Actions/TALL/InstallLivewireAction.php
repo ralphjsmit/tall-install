@@ -8,10 +8,9 @@ class InstallLivewireAction
 {
     public function __construct(
         private ComposerInstallAction $composerInstallAction,
-    ) {
-    }
+    ) {}
 
-    public function execute(string $basePath)
+    public function execute(string $basePath): void
     {
         $this->composerInstallAction->execute(['livewire/livewire'], $basePath);
     }

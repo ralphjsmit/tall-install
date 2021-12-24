@@ -2,6 +2,6 @@
 
 namespace RalphJSmit\TallInstall\Exceptions;
 
-class NpmInstallFailedException extends ProcessException
+class NpmCommandFailedException extends ProcessException
 {
 }

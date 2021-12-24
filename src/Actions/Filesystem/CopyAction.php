@@ -13,7 +13,7 @@ class CopyAction
 
     public function execute(string $from, string $to, bool $overwrite = true): void
     {
-        if ( $overwrite && file_exists($to) ) {
+        if ($overwrite && file_exists($to)) {
             unlink($to);
         }
 
@@ -25,7 +25,7 @@ class CopyAction
 
         $result = copy($from, $to);
 
-        if ( ! $result ) {
+        if (! $result) {
             throw new CopyActionFailedException("Failed copying file from {$from} to {$to}");
         }
     }

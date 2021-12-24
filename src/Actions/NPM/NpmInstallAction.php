@@ -2,6 +2,7 @@
 
 namespace RalphJSmit\TallInstall\Actions\NPM;
 
+use RalphJSmit\TallInstall\Exceptions\NpmInstallFailedException;
 use Symfony\Component\Process\Process;
 
 class NpmInstallAction
@@ -13,5 +14,9 @@ class NpmInstallAction
             $basepath,
         );
         $process->run();
+
+        if ( ! $process->isSuccessful() ) {
+            throw new NpmInstallFailedException($process);
+        }
     }
 }

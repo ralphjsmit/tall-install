@@ -2,6 +2,7 @@
 
 namespace RalphJSmit\TallInstall\Actions\Composer;
 
+use RalphJSmit\TallInstall\Exceptions\ComposerRequireFailedException;
 use Symfony\Component\Process\Process;
 
 class ComposerInstallAction
@@ -13,5 +14,9 @@ class ComposerInstallAction
             $basepath,
         );
         $process->run();
+
+        if ( ! $process->isSuccessful() ) {
+            throw new ComposerRequireFailedException($process);
+        }
     }
 }

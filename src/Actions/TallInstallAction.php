@@ -24,7 +24,8 @@ class TallInstallAction
         private InstallAssetsAction $installAssetsAction,
         private InstallBladeAction $installBladeAction,
         private InstallTodoAction $installTodoAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath = null)
     {

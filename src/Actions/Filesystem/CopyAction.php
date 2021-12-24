@@ -9,7 +9,8 @@ class CopyAction
 {
     public function __construct(
         private MakeDirectoryAction $makeDirectoryAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $from, string $to, bool $overwrite = true): void
     {
@@ -19,7 +20,7 @@ class CopyAction
 
         $directoryForNewFile = Str::beforeLast($to, '/');
 
-        if ( ! file_exists($directoryForNewFile) ) {
+        if (! file_exists($directoryForNewFile)) {
             $this->makeDirectoryAction->execute($directoryForNewFile);
         }
 

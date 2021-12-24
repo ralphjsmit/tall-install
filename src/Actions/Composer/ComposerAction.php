@@ -18,5 +18,7 @@ class ComposerAction
         if (! $process->isSuccessful()) {
             throw new ComposerCommandFailedException($process);
         }
+
+        unlink($basepath . '/composer.lock');
     }
 }

@@ -18,5 +18,7 @@ class NpmAction
         if (! $process->isSuccessful()) {
             throw new NpmCommandFailedException($process);
         }
+
+        unlink($basepath . '/package-lock.json');
     }
 }

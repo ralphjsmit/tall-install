@@ -18,7 +18,8 @@ class TallInstallAction
         private InitTailwindCSSAction $initTailwindCSSAction,
         private InstallLivewireAction $installLivewireAction,
         private InstallToastAction $installToastAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath = null)
     {

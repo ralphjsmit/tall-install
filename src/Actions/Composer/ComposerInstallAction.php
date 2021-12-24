@@ -15,7 +15,7 @@ class ComposerInstallAction
         );
         $process->run();
 
-        if ( ! $process->isSuccessful() ) {
+        if (! $process->isSuccessful()) {
             throw new ComposerRequireFailedException($process);
         }
     }

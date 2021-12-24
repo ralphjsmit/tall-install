@@ -9,7 +9,8 @@ class ProcessException extends Exception
 {
     public function __construct(
         public Process $process,
-    ) {}
+    ) {
+    }
 
     public function report()
     {

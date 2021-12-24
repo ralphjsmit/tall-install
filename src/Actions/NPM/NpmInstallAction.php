@@ -15,7 +15,7 @@ class NpmInstallAction
         );
         $process->run();
 
-        if ( ! $process->isSuccessful() ) {
+        if (! $process->isSuccessful()) {
             throw new NpmInstallFailedException($process);
         }
     }

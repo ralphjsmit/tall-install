@@ -8,5 +8,6 @@ class CopyActionFailedException extends Exception
 {
     public function __construct(
         protected string $message,
-    ) {}
+    ) {
+    }
 }

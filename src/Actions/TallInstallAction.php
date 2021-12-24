@@ -20,7 +20,8 @@ class TallInstallAction
         private InstallLivewireAction $installLivewireAction,
         private InstallToastAction $installToastAction,
         private InstallAssetsAction $installAssetsAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath = null)
     {

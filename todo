@@ -1,2 +1,3 @@
 - [x] Throw exception if process fails
 - Include buttons and other components?
+- Write integration tests with GitHub Actions

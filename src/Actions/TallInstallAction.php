@@ -26,11 +26,14 @@ class TallInstallAction
         private InstallBladeAction $installBladeAction,
         private InstallTodoAction $installTodoAction,
         private InstallGitignoreAction $installGitignoreAction,
-    ) {
-    }
+    ) {}
 
     public function execute(string $basePath = null)
     {
+        if ( ! $basePath ) {
+            $basePath = base_path();
+        }
+
         $this->installAlpineAction->execute($basePath);
         $this->installTailwindCSSAction->execute($basePath);
         $this->installFilamentAction->execute($basePath);

@@ -17,5 +17,6 @@ class InstallAssetsAction
         $this->copyAction->execute(stub('resources/css/pages.css'), $basePath . '/resources/css/pages.css');
         $this->copyAction->execute(stub('resources/js/app.js'), $basePath . '/resources/js/app.js');
         unlink($basePath . '/resources/js/bootstrap.js');
+        $this->copyAction->execute(stub('webpack.mix.js'), $basePath . '/webpack.mix.js');
     }
 }

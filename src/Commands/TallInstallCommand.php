@@ -26,11 +26,11 @@ class TallInstallCommand extends Command
 
         $tallInstallAction->execute($basePath);
 
-        if ( $this->option('browsersync') ) {
+        if ($this->option('browsersync')) {
             $setupBrowsersyncAction->execute($basePath, $this->option('url'));
         }
 
-        if ( $this->option('pest') ) {
+        if ($this->option('pest')) {
             $installPestAction->execute($basePath);
         }
 

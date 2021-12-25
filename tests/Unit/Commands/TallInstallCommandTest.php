@@ -8,7 +8,7 @@ use RalphJSmit\TallInstall\Actions\TallInstallAction;
 it('can install', function () {
     app()->instance(
         TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null,)
+        mock(TallInstallAction::class)->expect(execute: fn () => null, )
     );
 
     artisan('tall-install');
@@ -87,4 +87,3 @@ it('can install Pest with -p flag', function () {
 
     artisan('tall-install -p');
 });
-

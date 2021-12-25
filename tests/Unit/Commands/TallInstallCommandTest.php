@@ -11,6 +11,11 @@ it('can install', function () {
         mock(TallInstallAction::class)->expect(execute: fn () => null,)
     );
 
+    app()->instance(
+        SetupBrowsersyncAction::class,
+        mock(SetupBrowsersyncAction::class)->never()
+    );
+
     artisan('tall-install');
 });
 
@@ -23,6 +28,7 @@ it('can install BrowserSync with --browsersync flag', function () {
         SetupBrowsersyncAction::class,
         mock(SetupBrowsersyncAction::class)->expect(execute: fn () => null)
     );
+
     artisan('tall-install --browsersync');
 });
 

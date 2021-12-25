@@ -11,11 +11,6 @@ it('can install', function () {
         mock(TallInstallAction::class)->expect(execute: fn () => null,)
     );
 
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->shouldReceive('execute')->never()
-    );
-
     artisan('tall-install');
 });
 

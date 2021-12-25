@@ -1,0 +1,16 @@
+/* Browsersync configuration with Laravel Valet */
+mix.disableSuccessNotifications();
+
+const domain = 'valetDomain.test';
+const homedir = require('os').homedir();
+
+mix.browserSync({
+    proxy: 'https://' + domain,
+    host: domain,
+    open: 'external',
+    https: {
+        key: homedir + '/.config/valet/Certificates/' + domain + '.key',
+        cert: homedir + '/.config/valet/Certificates/' + domain + '.crt'
+    },
+    notify: false, //Disable notifications
+})

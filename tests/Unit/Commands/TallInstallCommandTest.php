@@ -12,8 +12,8 @@ it('can install', function () {
     );
 
     app()->instance(
-        SetupBrowsersyncAction::class,
-        mock(SetupBrowsersyncAction::class)->never()
+        TallInstallAction::class,
+        mock(TallInstallAction::class)->shouldReceive('execute')->never()
     );
 
     artisan('tall-install');

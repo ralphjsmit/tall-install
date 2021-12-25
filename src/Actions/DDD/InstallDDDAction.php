@@ -12,7 +12,8 @@ class InstallDDDAction
         private ComposerAction $composerAction,
         private FileGetContentsAction $fileGetContentsAction,
         private FilePutContentsAction $filePutContentsAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath)
     {

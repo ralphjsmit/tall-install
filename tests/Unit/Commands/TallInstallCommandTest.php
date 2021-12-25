@@ -1,6 +1,7 @@
 <?php
 
 use Mockery\MockInterface;
+use RalphJSmit\TallInstall\Actions\General\InstallPestAction;
 use RalphJSmit\TallInstall\Actions\General\SetupBrowsersyncAction;
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
 
@@ -51,5 +52,41 @@ it('can install BrowserSync with a custom url', function () {
     });
 
     artisan('tall-install -b --url=mydomain');
+});
+
+it('can install Pest with --pest flag', function () {
+    app()->instance(
+        TallInstallAction::class,
+        mock(TallInstallAction::class)->expect(execute: fn () => null)
+    );
+
+    $this->mock(SetupBrowsersyncAction::class, function (MockInterface $mock) {
+        $mock->shouldReceive('execute')->never();
+    });
+
+    app()->instance(
+        InstallPestAction::class,
+        mock(InstallPestAction::class)->expect(execute: fn () => null)
+    );
+
+    artisan('tall-install --pest');
+});
+
+it('can install Pest with -p flag', function () {
+    app()->instance(
+        TallInstallAction::class,
+        mock(TallInstallAction::class)->expect(execute: fn () => null)
+    );
+
+    $this->mock(SetupBrowsersyncAction::class, function (MockInterface $mock) {
+        $mock->shouldReceive('execute')->never();
+    });
+
+    app()->instance(
+        InstallPestAction::class,
+        mock(InstallPestAction::class)->expect(execute: fn () => null)
+    );
+
+    artisan('tall-install -p');
 });
 

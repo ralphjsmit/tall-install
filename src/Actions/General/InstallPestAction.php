@@ -10,7 +10,8 @@ class InstallPestAction
 {
     public function __construct(
         private ComposerInstallAction $composerInstallAction
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {
@@ -19,7 +20,7 @@ class InstallPestAction
         $process = new Process(['php', 'artisan', 'pest:install'], $basePath);
         $process->run();
 
-        if ( ! $process->isSuccessful() ) {
+        if (! $process->isSuccessful()) {
             throw new PestInstallFailedException($process);
         }
     }

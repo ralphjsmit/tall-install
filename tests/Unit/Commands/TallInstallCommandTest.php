@@ -1,5 +1,6 @@
 <?php
 
+use Mockery\MockInterface;
 use RalphJSmit\TallInstall\Actions\General\SetupBrowsersyncAction;
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
 
@@ -38,3 +39,17 @@ it('can install BrowserSync with -b flag', function () {
     );
     artisan('tall-install -b');
 });
+
+it('can install BrowserSync with a custom url', function () {
+    app()->instance(
+        TallInstallAction::class,
+        mock(TallInstallAction::class)->expect(execute: fn () => null)
+    );
+
+    $this->mock(SetupBrowsersyncAction::class, function (MockInterface $mock) {
+        $mock->shouldReceive('execute')->with(base_path(), 'mydomain');
+    });
+
+    artisan('tall-install -b --url=mydomain');
+});
+

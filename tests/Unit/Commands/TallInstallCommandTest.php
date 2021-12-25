@@ -1,14 +1,14 @@
 <?php
 
-use RalphJSmit\TallInstall\Actions\General\SetupBrowsersyncAction;
-use RalphJSmit\TallInstall\Actions\TallInstallAction;
-
 use function Pest\Laravel\artisan;
+use RalphJSmit\TallInstall\Actions\General\SetupBrowsersyncAction;
+
+use RalphJSmit\TallInstall\Actions\TallInstallAction;
 
 it('can install', function () {
     app()->instance(
         TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null,)
+        mock(TallInstallAction::class)->expect(execute: fn () => null, )
     );
 
     app()->instance(

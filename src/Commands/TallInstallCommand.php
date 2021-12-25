@@ -21,7 +21,7 @@ class TallInstallCommand extends Command
 
         $tallInstallAction->execute($basePath);
 
-        if ( $this->option('browsersync') ) {
+        if ($this->option('browsersync')) {
             $setupBrowsersyncAction->execute($basePath);
         }
 

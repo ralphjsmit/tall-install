@@ -8,7 +8,8 @@ class ConfigureBootstrapAction
 {
     public function __construct(
         private CopyAction $copyAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

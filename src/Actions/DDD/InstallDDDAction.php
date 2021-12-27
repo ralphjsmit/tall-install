@@ -9,7 +9,8 @@ class InstallDDDAction
         private UpdateFileStructureAction $updateFileStructureAction,
         private ConfigureBootstrapAction $configureBootstrapAction,
         private ReplaceNamespacesAction $replaceNamespacesAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath)
     {

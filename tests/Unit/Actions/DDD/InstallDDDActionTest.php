@@ -33,6 +33,16 @@ it('it can configure DDD for an application', function () {
     expect($this->prefix . '/app/Models/User.php')->toHaveNamespace('App\Models');
     expect($this->prefix . '/app/View/Components/Layouts/Admin.php')->toHaveNamespace('App\View\Components\Layouts');
     expect($this->prefix . '/app/View/Components/Layouts/App.php')->toHaveNamespace('App\View\Components\Layouts');
+    expect($this->prefix . '/bootstrap/app.php')->contents->not->toContain(
+        'new Support\App\Application(',
+        'Support\App\Http\Kernel::class',
+        'Support\App\Console\Kernel::class',
+        'Support\App\Exceptions\Handler::class'
+    );
+    expect($this->prefix . '/config/app.php')
+        ->contents->toContain('App\Providers')
+        ->not->toContain('Support\App\Providers');
+    expect($this->prefix . '/database/seeders/DatabaseSeeder.php')->contents->not->toContain('Support\Models');
 
     app(InstallDDDAction::class)->execute($this->prefix);
 
@@ -62,4 +72,15 @@ it('it can configure DDD for an application', function () {
     expect($this->prefix . '/src/Support/Models/User.php')->toHaveNamespace('Support\Models');
     expect($this->prefix . '/src/Support/View/Components/Layouts/Admin.php')->toHaveNamespace('Support\View\Components\Layouts');
     expect($this->prefix . '/src/Support/View/Components/Layouts/App.php')->toHaveNamespace('Support\View\Components\Layouts');
+    expect($this->prefix . '/src/Support/App/Application.php')->toExist()->toHaveNamespace('Support\App');
+    expect($this->prefix . '/bootstrap/app.php')->contents->toContain(
+        'new Support\App\Application(',
+        'Support\App\Http\Kernel::class',
+        'Support\App\Console\Kernel::class',
+        'Support\App\Exceptions\Handler::class'
+    );
+    expect($this->prefix . '/config/app.php')->contents->toContain('Support\App\Providers');
+    expect($this->prefix . '/database/seeders/DatabaseSeeder.php')->contents->toContain('Support\Models');
+    expect($this->prefix . '/src/Support/App/Http/Kernel.php')->contents->toContain('Support\App');
+    expect($this->prefix . '/src/Support/App/Providers/AuthServiceProvider.php')->contents->toContain('Support\App');
 });

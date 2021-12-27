@@ -15,7 +15,7 @@ class ComposerAction
         );
         $process->run();
 
-        if ( ! $process->isSuccessful() ) {
+        if (! $process->isSuccessful()) {
             throw new ComposerCommandFailedException($process);
         }
 

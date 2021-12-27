@@ -18,6 +18,7 @@
   "require": {
     "php": "^8.0",
     "illuminate/contracts": "^8.73",
+    "ralphjsmit/stubs": "@dev",
     "spatie/laravel-package-tools": "^1.9.2",
     "symfony/filesystem": "^6.0",
     "symfony/process": "^5.0"
@@ -70,6 +71,10 @@
     {
       "type": "path",
       "url": "/Users/ralphjsmit/Library/Mobile Documents/com~apple~CloudDocs/Work/Development/Packages/pest-plugin-filesystem"
+    },
+    {
+      "type": "path",
+      "url": "/Users/ralphjsmit/Library/Mobile Documents/com~apple~CloudDocs/Work/Development/Packages/stubs"
     }
   ]
 }

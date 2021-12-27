@@ -2,3 +2,4 @@
 - Include buttons and other components?
 - Write integration tests with GitHub Actions
 - Speed-up process by combining composer calls into a single call / --no-update flag
+- Register BladeServiceProviders

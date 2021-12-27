@@ -6,7 +6,8 @@ class InstallDDDAction
 {
     public function __construct(
         private UpdateNamespacesAction $updateNamespacesAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath)
     {

@@ -4,11 +4,13 @@ namespace RalphJSmit\TallInstall\Actions\DDD;
 
 use RalphJSmit\Stubs\Stubs;
 use RalphJSmit\TallInstall\Actions\Filesystem\CreateFileAction;
+use RalphJSmit\TallInstall\Actions\Filesystem\DeleteFolderAction;
 
 class UpdateFileStructureAction
 {
     public function __construct(
         private CreateFileAction $createFileAction,
+        private DeleteFolderAction $deleteFileAction,
     ) {}
 
     public function execute(string $basePath): void
@@ -43,5 +45,6 @@ class UpdateFileStructureAction
         $stubs->getFile('/app/View/Components/Layouts/App.php')->namespace('Support\View\Components\Layouts');
 
         $this->createFileAction->execute($basePath . '/src/Support/helpers.php');
+        $this->deleteFileAction->execute($basePath . '/app');
     }
 }

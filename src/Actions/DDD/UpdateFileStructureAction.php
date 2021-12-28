@@ -3,9 +3,14 @@
 namespace RalphJSmit\TallInstall\Actions\DDD;
 
 use RalphJSmit\Stubs\Stubs;
+use RalphJSmit\TallInstall\Actions\Filesystem\CreateFileAction;
 
 class UpdateFileStructureAction
 {
+    public function __construct(
+        private CreateFileAction $createFileAction,
+    ) {}
+
     public function execute(string $basePath): void
     {
         $stubs = Stubs::dir($basePath)->namespaces([
@@ -36,5 +41,7 @@ class UpdateFileStructureAction
         $stubs->getFile('/app/Models/User.php')->namespace('Support\Models');
         $stubs->getFile('/app/View/Components/Layouts/Admin.php')->namespace('Support\View\Components\Layouts');
         $stubs->getFile('/app/View/Components/Layouts/App.php')->namespace('Support\View\Components\Layouts');
+
+        $this->createFileAction->execute($basePath . '/src/Support/helpers.php');
     }
 }

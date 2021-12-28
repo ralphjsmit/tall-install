@@ -50,6 +50,7 @@ it('it can configure DDD for an application', function () {
     expect($this->prefix . '/composer.json')->contents->toContain('"Domain\\\": "src/Domain/"');
     expect($this->prefix . '/composer.json')->contents->toContain('"Support\\\": "src/Support/"');
     expect($this->prefix . '/composer.json')->contents->toContain('"src/Support/helpers.php"');
+    expect($this->prefix . '/src/Support/helpers.php')->toExist();
 
     expect($this->prefix . '/src/Support/App/Console/Kernel.php')->toHaveNamespace('Support\App\Console');
     expect($this->prefix . '/src/Support/App/Exceptions/Handler.php')->toHaveNamespace('Support\App\Exceptions');
@@ -81,6 +82,8 @@ it('it can configure DDD for an application', function () {
     );
     expect($this->prefix . '/config/app.php')->contents->toContain('Support\App\Providers');
     expect($this->prefix . '/database/seeders/DatabaseSeeder.php')->contents->toContain('Support\Models');
-    expect($this->prefix . '/src/Support/App/Http/Kernel.php')->contents->toContain('Support\App');
-    expect($this->prefix . '/src/Support/App/Providers/AuthServiceProvider.php')->contents->toContain('Support\App');
+    expect($this->prefix . '/src/Support/App/Http/Kernel.php')->contents->toContain('\Support\App');
+    expect($this->prefix . '/src/Support/App/Providers/AuthServiceProvider.php')->contents
+        ->toContain('Support\Models\\')
+        ->toContain('Support\App\Policies\\');
 });

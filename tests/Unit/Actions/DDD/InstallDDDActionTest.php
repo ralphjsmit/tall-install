@@ -86,4 +86,6 @@ it('it can configure DDD for an application', function () {
     expect($this->prefix . '/src/Support/App/Providers/AuthServiceProvider.php')->contents
         ->toContain('Support\Models\\')
         ->toContain('Support\App\Policies\\');
+
+    expect($this->prefix . '/app')->not->toExist();
 });

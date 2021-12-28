@@ -11,7 +11,8 @@ class ReplaceNamespaceAction
     public function __construct(
         private FileGetContentsAction $fileGetContentsAction,
         private FilePutContentsAction $filePutContentsAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath, $files): void
     {

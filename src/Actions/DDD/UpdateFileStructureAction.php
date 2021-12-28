@@ -9,7 +9,8 @@ class UpdateFileStructureAction
 {
     public function __construct(
         private CreateFileAction $createFileAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

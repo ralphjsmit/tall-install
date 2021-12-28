@@ -1,6 +1,7 @@
 <?php
 
 use Mockery\MockInterface;
+use RalphJSmit\TallInstall\Actions\DDD\InstallDDDAction;
 use RalphJSmit\TallInstall\Actions\General\InstallPestAction;
 use RalphJSmit\TallInstall\Actions\General\SetupBrowsersyncAction;
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
@@ -8,7 +9,7 @@ use RalphJSmit\TallInstall\Actions\TallInstallAction;
 it('can install', function () {
     app()->instance(
         TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null, )
+        mock(TallInstallAction::class)->expect(execute: fn () => null,)
     );
 
     artisan('tall-install');
@@ -86,4 +87,42 @@ it('can install Pest with -p flag', function () {
     );
 
     artisan('tall-install -p');
+});
+
+it('can install DDD with --ddd flag', function () {
+    foreach (
+        [
+            TallInstallAction::class,
+            SetupBrowsersyncAction::class,
+            InstallPestAction::class,
+        ] as $mock) {
+        $this->mock($mock, function (MockInterface $mock) {
+            $mock->shouldReceive('execute')->never();
+        });
+    }
+
+    $this->mock(InstallDDDAction::class, function (MockInterface $mock) {
+        $mock->shouldReceive('execute')->once();
+    });
+
+    $this->artisan('tall-install --ddd');
+});
+
+it('can install DDD with -d flag', function () {
+    foreach (
+        [
+            TallInstallAction::class,
+            SetupBrowsersyncAction::class,
+            InstallPestAction::class,
+        ] as $mock) {
+        $this->mock($mock, function (MockInterface $mock) {
+            $mock->shouldReceive('execute')->never();
+        });
+    }
+
+    $this->mock(InstallDDDAction::class, function (MockInterface $mock) {
+        $mock->shouldReceive('execute')->once();
+    });
+
+    artisan('tall-install -d');
 });

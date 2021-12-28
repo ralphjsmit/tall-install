@@ -11,7 +11,8 @@ class UpdateFileStructureAction
     public function __construct(
         private CreateFileAction $createFileAction,
         private DeleteFolderAction $deleteFileAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

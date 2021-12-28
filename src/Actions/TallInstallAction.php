@@ -27,7 +27,8 @@ class TallInstallAction
         private InstallBladeAction $installBladeAction,
         private InstallTodoAction $installTodoAction,
         private InstallGitignoreAction $installGitignoreAction,
-    ) {}
+    ) {
+    }
 
     protected ?Pingable $pingable;
 
@@ -58,7 +59,7 @@ class TallInstallAction
 
     protected function ping(string $text): void
     {
-        if ( $this->pingable ) {
+        if ($this->pingable) {
             $this->pingable->ping($text);
         }
     }

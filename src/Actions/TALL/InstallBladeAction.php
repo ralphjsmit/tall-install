@@ -13,7 +13,8 @@ class InstallBladeAction
         private CopyAction $copyAction,
         private FileGetContentsAction $fileGetContentsAction,
         private FilePutContentsAction $filePutContentsAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

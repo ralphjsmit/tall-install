@@ -4,15 +4,16 @@ namespace RalphJSmit\TallInstall\Actions\DDD;
 
 use RalphJSmit\Stubs\Stubs;
 use RalphJSmit\TallInstall\Actions\Filesystem\CreateFileAction;
+use RalphJSmit\TallInstall\Actions\Filesystem\CreateFolderAction;
 use RalphJSmit\TallInstall\Actions\Filesystem\DeleteFolderAction;
 
 class UpdateFileStructureAction
 {
     public function __construct(
         private CreateFileAction $createFileAction,
+        private CreateFolderAction $createFolderAction,
         private DeleteFolderAction $deleteFileAction,
-    ) {
-    }
+    ) {}
 
     public function execute(string $basePath): void
     {
@@ -47,5 +48,11 @@ class UpdateFileStructureAction
 
         $this->createFileAction->execute($basePath . '/src/Support/helpers.php');
         $this->deleteFileAction->execute($basePath . '/app');
+
+        $this->createFolderAction->execute($basePath . '/src/Domain');
+        $this->createFolderAction->execute($basePath . '/src/App/Admin');
+        $this->createFolderAction->execute($basePath . '/src/App/Api');
+        $this->createFolderAction->execute($basePath . '/src/App/Console');
+        $this->createFolderAction->execute($basePath . '/src/App/Jobs');
     }
 }

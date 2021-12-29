@@ -88,4 +88,9 @@ it('it can configure DDD for an application', function () {
         ->toContain('Support\App\Policies\\');
 
     expect($this->prefix . '/app')->not->toExist();
+    expect($this->prefix . '/src/Domain')->toExist();
+    expect($this->prefix . '/src/App/Admin')->toExist();
+    expect($this->prefix . '/src/App/Api')->toExist();
+    expect($this->prefix . '/src/App/Console')->toExist();
+    expect($this->prefix . '/src/App/Jobs')->toExist();
 });

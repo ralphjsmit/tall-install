@@ -13,7 +13,8 @@ class UpdateFileStructureAction
         private CreateFileAction $createFileAction,
         private CreateFolderAction $createFolderAction,
         private DeleteFolderAction $deleteFileAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

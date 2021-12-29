@@ -1,8 +1,7 @@
-# Laravel TALL Preset with Domain Driven Design (DDD) structure
+# Laravel TALL Install Command
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ralphjsmit/tall-install.svg?style=flat-square)](https://packagist.org/packages/ralphjsmit/tall-install)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ralphjsmit/tall-install/run-tests?label=tests)](https://github.com/ralphjsmit/tall-install/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ralphjsmit/tall-install/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ralphjsmit/tall-install/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![run-tests](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml/badge.svg?event=push)](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/ralphjsmit/tall-install.svg?style=flat-square)](https://packagist.org/packages/ralphjsmit/tall-install)
 
 This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**. 
@@ -37,15 +36,19 @@ The intention of this package is to do all the backend installation and not forc
 
 Missing your favourite package? Feel free to submit an issue or a PR with your proposal.
 
+<br>
+
+## Contents
+
+1. [Installation & usage](#installation--usage)
+
 ## Installation & usage
 
 To get started, you need a plain Laravel installation:
 
 ```bash
 laravel new name
-
 # or
-
 composer create-project laravel/laravel name
 ```
 
@@ -61,17 +64,11 @@ Now run the `tall-install` command:
 php artisan tall-install
 ```
 
-You can use the following flags to install a particular package:
+You can use the following flags to install a particular package.
 
-### `tall-install --pest`
+<br>
 
-You may use the `--pest` or `-p` flag to configure Pest:
-
-```bash
-php artisan tall-install --pest
-```
-
-### `tall-install --ddd`
+## Configure DDD with `tall-install --ddd`
 
 You may use the `--ddd` or `-d` flag to configure DDD:
 
@@ -108,8 +105,15 @@ src/App
 For me, once I started using DDD I never wanted anything else. A good reference is the [Laravel Beyond CRUD](https://laravel-beyond-crud.com) course by Brent Roose.
 
 
+## Install Pest with `tall-install --pest`
 
-### `tall-install --browsersync`
+You may use the `--pest` or `-p` flag to configure Pest:
+
+```bash
+php artisan tall-install --pest
+```
+
+### Install Browsersync with `tall-install --browsersync`
 
 You may use the `--browsersync` or `-b` flag to configure Browsersync for Laravel Valet:
 
@@ -144,27 +148,10 @@ By default it takes the current folder name as the domain for Valet. You may spe
 php artisan tall-install --browsersync --url=custom.test
 ```
 
+## General
 
+🐞 If you spot a bug, please submit a detailed issue, and wait for assistance.
 
+🔐 If you discover a vulnerability, please review [our security policy](../../security/policy).
 
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Ralph J. Smit](https://github.com/ralphjsmit)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+🙋‍♂️ [Ralph J. Smit](https://ralphjsmit.com)

@@ -61,6 +61,88 @@ Now run the `tall-install` command:
 php artisan tall-install
 ```
 
+You can use the following flags to install a particular package:
+
+### `tall-install --pest`
+
+You may use the `--pest` or `-p` flag to configure Pest:
+
+```bash
+php artisan tall-install --pest
+```
+
+### `tall-install --ddd`
+
+You may use the `--ddd` or `-d` flag to configure DDD:
+
+```bash
+php artisan tall-install --ddd
+```
+
+This is the most powerful feature, as it rewrites your `/app` directory to this:
+
+```
+/src/Support
+     ├── App
+         ├── Console
+         ├── Exceptions
+         ├── HTTP
+         ├── Providers
+         ├── Application.php
+     ├── Models
+         User.php
+     ├── View/Components/Layouts
+         App.php
+         Admin.php
+src/Domain
+     // Add your own 'domains' here. Domains are where the business logic of the application is.
+     ├── Invoices...
+     ├── Customers...
+src/App
+     // Add your own 'apps' here. Apps are the exposed to the outside (like APIs, a dashboard, a separate admin panel) or are your infrastructure (jobs).
+     ├── Console
+     ├── Jobs
+     ├── Api
+```
+
+For me, once I started using DDD I never wanted anything else. A good reference is the [Laravel Beyond CRUD](https://laravel-beyond-crud.com) course by Brent Roose.
+
+
+
+### `tall-install --browsersync`
+
+You may use the `--browsersync` or `-b` flag to configure Browsersync for Laravel Valet:
+
+```bash
+php artisan tall-install --browsersync
+```
+
+This will append the following code to your `webpack.mix.js` file:
+
+```js
+/* Browsersync configuration with Laravel Valet */
+mix.disableSuccessNotifications();
+
+const domain = 'valetDomain.test';
+const homedir = require('os').homedir();
+
+mix.browserSync({
+    proxy: 'https://' + domain,
+    host: domain,
+    open: 'external',
+    https: {
+        key: homedir + '/.config/valet/Certificates/' + domain + '.key',
+        cert: homedir + '/.config/valet/Certificates/' + domain + '.crt'
+    },
+    notify: false, //Disable notifications
+})
+```
+
+By default it takes the current folder name as the domain for Valet. You may specify a custom domain with the `--url` flag:
+
+```bash
+php artisan tall-install --browsersync --url=custom.test
+```
 
 
 

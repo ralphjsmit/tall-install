@@ -41,6 +41,9 @@ Missing your favourite package? Feel free to submit an issue or a PR with your p
 ## Contents
 
 1. [Installation & usage](#installation--usage)
+2. [Configure DDD](#configure-ddd-with-tall-install---ddd)
+3. [Install Pest](#install-pest-with-tall-install---pest)
+4. [Install Browsersync](#install-browsersync-with-tall-install---browsersync)
 
 ## Installation & usage
 
@@ -113,7 +116,7 @@ You may use the `--pest` or `-p` flag to configure Pest:
 php artisan tall-install --pest
 ```
 
-### Install Browsersync with `tall-install --browsersync`
+## Install Browsersync with `tall-install --browsersync`
 
 You may use the `--browsersync` or `-b` flag to configure Browsersync for Laravel Valet:
 

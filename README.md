@@ -149,6 +149,14 @@ By default it takes the current folder name as the domain for Valet. You may spe
 php artisan tall-install --browsersync --url=custom.test
 ```
 
+### Cleaning up
+
+You can remove the package from your Composer dependnecies after you've run the `tall-install` command:
+
+```bash
+composer remove ralphjsmit/tall-install
+```
+
 ## General
 
 🐞 If you spot a bug, please submit a detailed issue and I'll try to fix it as soon as possible.

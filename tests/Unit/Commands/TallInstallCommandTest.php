@@ -9,19 +9,21 @@ use RalphJSmit\TallInstall\Actions\TallInstallAction;
 use function Pest\Laravel\artisan;
 
 it('can install', function () {
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null,)
-    );
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
 
     artisan('tall-install');
 });
 
 it('can install BrowserSync with --browsersync flag', function () {
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null)
-    );
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
     app()->instance(
         SetupBrowsersyncAction::class,
         mock(SetupBrowsersyncAction::class)->expect(execute: fn () => null)
@@ -31,10 +33,11 @@ it('can install BrowserSync with --browsersync flag', function () {
 });
 
 it('can install BrowserSync with -b flag', function () {
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null)
-    );
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
     app()->instance(
         SetupBrowsersyncAction::class,
         mock(SetupBrowsersyncAction::class)->expect(execute: fn () => null)
@@ -43,10 +46,11 @@ it('can install BrowserSync with -b flag', function () {
 });
 
 it('can install BrowserSync with a custom url', function () {
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null)
-    );
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
 
     $this->mock(SetupBrowsersyncAction::class, function (MockInterface $mock) {
         $mock->shouldReceive('execute')->with(base_path(), 'mydomain');
@@ -56,10 +60,11 @@ it('can install BrowserSync with a custom url', function () {
 });
 
 it('can install Pest with --pest flag', function () {
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null)
-    );
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
 
     $this->mock(SetupBrowsersyncAction::class, function (MockInterface $mock) {
         $mock->shouldReceive('execute')->never();
@@ -74,10 +79,11 @@ it('can install Pest with --pest flag', function () {
 });
 
 it('can install Pest with -p flag', function () {
-    app()->instance(
-        TallInstallAction::class,
-        mock(TallInstallAction::class)->expect(execute: fn () => null)
-    );
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
 
     $this->mock(SetupBrowsersyncAction::class, function (MockInterface $mock) {
         $mock->shouldReceive('execute')->never();
@@ -92,12 +98,18 @@ it('can install Pest with -p flag', function () {
 });
 
 it('can install DDD with --ddd flag', function () {
-    foreach (
-        [
-            TallInstallAction::class,
-            SetupBrowsersyncAction::class,
-            InstallPestAction::class,
-        ] as $mock) {
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
+
+    $mocks = [
+        SetupBrowsersyncAction::class,
+        InstallPestAction::class,
+    ];
+
+    foreach ($mocks as $mock) {
         $this->mock($mock, function (MockInterface $mock) {
             $mock->shouldReceive('execute')->never();
         });
@@ -111,12 +123,18 @@ it('can install DDD with --ddd flag', function () {
 });
 
 it('can install DDD with -d flag', function () {
-    foreach (
-        [
-            TallInstallAction::class,
-            SetupBrowsersyncAction::class,
-            InstallPestAction::class,
-        ] as $mock) {
+    $this->mock(TallInstallAction::class, function (MockInterface $mock) {
+        $mock
+            ->shouldReceive('pingable')->once()->andReturnSelf()
+            ->shouldReceive('execute')->once();
+    });
+
+    $mocks = [
+        SetupBrowsersyncAction::class,
+        InstallPestAction::class,
+    ];
+
+    foreach ($mocks as $mock) {
         $this->mock($mock, function (MockInterface $mock) {
             $mock->shouldReceive('execute')->never();
         });

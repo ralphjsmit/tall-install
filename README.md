@@ -153,8 +153,10 @@ php artisan tall-install --browsersync --url=custom.test
 
 ## General
 
-🐞 If you spot a bug, please submit a detailed issue, and wait for assistance.
+🐞 If you spot a bug, please submit a detailed issue and I'll try to fix it as soon as possible.
 
 🔐 If you discover a vulnerability, please review [our security policy](../../security/policy).
+
+🙌 If you want to contribute, please submit a pull request. All PRs will be fully credited. If you're unsure whether I'd accept your idea, feel free to contact me!
 
 🙋‍♂️ [Ralph J. Smit](https://ralphjsmit.com)

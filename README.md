@@ -67,7 +67,7 @@ php artisan tall-install
 
 You can use the following flags to install a particular package.
 
-<br>
+> Note: you can only use this command on a plain Laravel installation. Otherwise I cannot guarantee the correct result.
 
 ## Configure DDD with `tall-install --ddd`
 

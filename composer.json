@@ -30,7 +30,7 @@
     "pestphp/pest-plugin-laravel": "^1.1",
     "pestphp/pest-plugin-mock": "^1.0",
     "phpunit/phpunit": "^9.5",
-    "ralphjsmit/pest-plugin-filesystem": "@dev",
+    "ralphjsmit/pest-plugin-filesystem": "^1.0",
     "spatie/laravel-ray": "^1.26"
   },
   "autoload": {
@@ -47,11 +47,7 @@
       "RalphJSmit\\TallInstall\\Tests\\": "tests"
     }
   },
-  "scripts": {
-    "analyse": "vendor/bin/phpstan analyse",
-    "test": "vendor/bin/pest",
-    "test-coverage": "vendor/bin/pest coverage"
-  },
+  "scripts": {},
   "config": {
     "sort-packages": true
   },
@@ -68,10 +64,6 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "repositories": [
-    {
-      "type": "path",
-      "url": "/Users/ralphjsmit/Library/Mobile Documents/com~apple~CloudDocs/Work/Development/Packages/pest-plugin-filesystem"
-    },
     {
       "type": "path",
       "url": "/Users/ralphjsmit/Library/Mobile Documents/com~apple~CloudDocs/Work/Development/Packages/stubs"

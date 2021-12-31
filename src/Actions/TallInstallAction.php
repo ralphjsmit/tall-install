@@ -30,7 +30,7 @@ class TallInstallAction
     ) {
     }
 
-    protected ?Pingable $pingable;
+    protected ?Pingable $pingable = null;
 
     public function execute(string $basePath)
     {

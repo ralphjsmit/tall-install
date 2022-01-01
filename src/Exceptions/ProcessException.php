@@ -13,7 +13,7 @@ class ProcessException extends Exception
         $output = $process->getOutput();
         $errorOutput = $process->getErrorOutput();
 
-        if ( ! $errorOutput ) {
+        if (! $errorOutput) {
             $errorOutput = $output;
         }
 

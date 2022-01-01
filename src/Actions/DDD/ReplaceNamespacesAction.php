@@ -6,7 +6,8 @@ class ReplaceNamespacesAction
 {
     public function __construct(
         private ReplaceNamespaceAction $replaceNamespaceAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

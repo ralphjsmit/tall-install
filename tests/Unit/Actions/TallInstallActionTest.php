@@ -1,8 +1,8 @@
 <?php
 
-use function RalphJSmit\PestPluginFilesystem\contents;
-
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
+
+use function RalphJSmit\PestPluginFilesystem\contents;
 
 beforeEach(function () {
     $this->prefix = __DIR__ . '/../../tmp/laravel-8.x';
@@ -19,6 +19,7 @@ it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/package.json')->contents->not->toContain('"@tailwindcss/typography":');
     expect($this->prefix . '/tailwind.config.js')->not->toExist();
     expect($this->prefix . '/composer.json')->contents->not->toContain('"livewire/livewire":');
+    expect($this->prefix . '/config/livewire.php')->not->toExist();
     expect($this->prefix . '/composer.json')->contents->not->toContain('"usernotnull/tall-toasts":');
     expect($this->prefix . '/resources/css/app.css')->contents->toBe('');
     expect($this->prefix . '/resources/css/defaults.css')->not->toExist();
@@ -52,6 +53,7 @@ it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/package.json')->contents->toContain('"@tailwindcss/typography":');
     expect($this->prefix . '/tailwind.config.js')->toExist();
     expect($this->prefix . '/composer.json')->contents->toContain('"livewire/livewire":');
+    expect($this->prefix . '/config/livewire.php')->toExist();
     expect($this->prefix . '/composer.json')->contents->toContain('"usernotnull/tall-toasts":');
     expect($this->prefix . '/resources/css/app.css')->toHaveContents(contents(stub('resources/css/app.css')));
     expect($this->prefix . '/resources/css/defaults.css')->toHaveContents(contents(stub('resources/css/defaults.css')));

@@ -30,7 +30,7 @@
     "pestphp/pest-plugin-laravel": "^1.1",
     "pestphp/pest-plugin-mock": "^1.0",
     "phpunit/phpunit": "^9.5",
-    "ralphjsmit/pest-plugin-filesystem": "^1.0",
+    "ralphjsmit/pest-plugin-filesystem": "^1.0.4",
     "spatie/laravel-ray": "^1.26"
   },
   "autoload": {

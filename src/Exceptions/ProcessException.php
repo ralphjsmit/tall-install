@@ -8,12 +8,9 @@ use Symfony\Component\Process\Process;
 class ProcessException extends Exception
 {
     public function __construct(
-        public Process $process,
+        Process $process,
     ) {
-    }
-
-    public function report()
-    {
-        return $this->process->getErrorOutput();
+        dump($process->getErrorOutput());
+        $this->message = $process->getErrorOutput();
     }
 }

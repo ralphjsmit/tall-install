@@ -27,6 +27,8 @@ it('it can configure DDD for an application', function () {
     expect($this->prefix . '/app/Providers/AppServiceProvider.php')->toHaveNamespace('App\Providers');
     expect($this->prefix . '/app/Providers/AuthServiceProvider.php')->toHaveNamespace('App\Providers');
     expect($this->prefix . '/app/Providers/BladeServiceProvider.php')->toHaveNamespace('App\Providers');
+    expect($this->prefix . '/app/Providers/BladeServiceProvider.php')->contents
+        ->toContain('\App\View\Components\Layouts\App::class')->toContain('\App\View\Components\Layouts\Admin::class');
     expect($this->prefix . '/app/Providers/BroadcastServiceProvider.php')->toHaveNamespace('App\Providers');
     expect($this->prefix . '/app/Providers/EventServiceProvider.php')->toHaveNamespace('App\Providers');
     expect($this->prefix . '/app/Providers/RouteServiceProvider.php')->toHaveNamespace('App\Providers');
@@ -67,6 +69,9 @@ it('it can configure DDD for an application', function () {
     expect($this->prefix . '/src/Support/App/Providers/AppServiceProvider.php')->toHaveNamespace('Support\App\Providers');
     expect($this->prefix . '/src/Support/App/Providers/AuthServiceProvider.php')->toHaveNamespace('Support\App\Providers');
     expect($this->prefix . '/src/Support/App/Providers/BladeServiceProvider.php')->toHaveNamespace('Support\App\Providers');
+    expect($this->prefix . '/src/Support/App/Providers/BladeServiceProvider.php')->contents
+        ->toContain('\Support\View\Components\Layouts\App::class')
+        ->toContain('\Support\View\Components\Layouts\Admin::class');
     expect($this->prefix . '/src/Support/App/Providers/BroadcastServiceProvider.php')->toHaveNamespace('Support\App\Providers');
     expect($this->prefix . '/src/Support/App/Providers/EventServiceProvider.php')->toHaveNamespace('Support\App\Providers');
     expect($this->prefix . '/src/Support/App/Providers/RouteServiceProvider.php')->toHaveNamespace('Support\App\Providers');

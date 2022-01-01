@@ -12,25 +12,24 @@ class InstallLivewireAction
     public function __construct(
         private ComposerInstallAction $composerInstallAction,
         private ReplaceNamespaceAction $replaceNamespaceAction,
-    ) {
-    }
+    ) {}
 
     public function execute(string $basePath): void
     {
         $this->composerInstallAction->execute(['livewire/livewire'], $basePath);
 
-        $process = new Process(['php', 'artisan', 'livewire:publish', '--config'], $basePath, );
+        $process = new Process(['php', 'artisan', 'livewire:publish', '--config'], $basePath,);
         $process->run();
 
-        if (! $process->isSuccessful()) {
+        if ( ! $process->isSuccessful() ) {
             throw new LivewireCommandFailedException($process);
         }
 
         $this->replaceNamespaceAction->execute($basePath, [
             [
                 'path' => '/config/livewire.php',
-                'search' => "'class_namespace' => 'App\\Http\\Livewire',",
-                'replace' => "'class_namespace' => '',",
+                'search' => "App\\Http\\Livewire",
+                'replace' => "",
             ],
         ]);
     }

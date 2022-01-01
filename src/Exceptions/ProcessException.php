@@ -10,7 +10,13 @@ class ProcessException extends Exception
     public function __construct(
         Process $process,
     ) {
-        dump($process->getErrorOutput());
-        $this->message = $process->getErrorOutput();
+        $output = $process->getOutput();
+        $errorOutput = $process->getErrorOutput();
+
+        if ( ! $errorOutput ) {
+            $errorOutput = $output;
+        }
+
+        $this->message = $errorOutput;
     }
 }

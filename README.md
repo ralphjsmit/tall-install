@@ -1,3 +1,6 @@
+![Tall-Install Banner](https://github.com/ralphjsmit/tall-install/blob/main/docs/tall-install.jpg)
+
+
 # Easy command to install the TALL-stack & jumpstart development🚀
 
 [![Run Package Tests](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml)
@@ -11,6 +14,13 @@ This package provides a **simple artisan command for Laravel** that can **fully 
 👉 **[Check out a demo-project file's structure](https://github.com/ralphjsmit/tall-install-demo)**
 
 👉 **[Check out a demo-project with an automatically generated Domain-Driven file structure](https://github.com/ralphjsmit/tall-install-ddd-demo)**
+
+## Features
+
+1. It runs the regular installation process for your favourite TALl-tools, so that you don't have to 🚀
+2. Install Pest instead of PHPUnit ⚙️
+3. Configure a Domain-Driven file structure (DDD)✨
+4. Install Browsersync for Valet users ⚡️
 
 
 ### What does it install?

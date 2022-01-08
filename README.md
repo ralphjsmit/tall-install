@@ -1,8 +1,8 @@
 # Laravel TALL Install Command
 
 [![Run Tests](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml/badge.svg?event=release)](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml)
-[![Run Laravel Tests (Pest) (normal version)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml)
-[![Run Laravel Tests (Pest) (DDD-version)](https://github.com/ralphjsmit/tall-install-ddd-demo/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ralphjsmit/tall-install-ddd-demo/actions/workflows/run-tests.yml)
+[![Run Laravel Tests (Pest) (normal version)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml)
+[![Run Laravel Tests (Pest) (DDD-version)](https://github.com/ralphjsmit/tall-install-ddd-demo/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install-ddd-demo/actions/workflows/run-tests.yml)
 
 This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**. 
 

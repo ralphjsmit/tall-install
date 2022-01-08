@@ -5,7 +5,6 @@
 build
 composer.lock
 coverage
-docs
 phpunit.xml
 phpstan.neon
 testbench.yaml
@@ -15,3 +14,4 @@ node_modules
 node_modules.nosync
 tests/tmp
 .php-cs-fixer.cache
+.DS_Store

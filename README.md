@@ -1,5 +1,4 @@
-![Tall-Install Banner](https://github.com/ralphjsmit/tall-install/blob/main/docs/tall-install.jpg)
-
+![Tall-Install Banner](https://github.com/ralphjsmit/tall-install/blob/main/docs/images/tall-install.jpg)
 
 # Easy command to install the TALL-stack & jumpstart development🚀
 
@@ -7,7 +6,7 @@
 [![Run Laravel Tests (Pest) (normal version)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml)
 [![Run Laravel Tests (Pest) (DDD-version)](https://github.com/ralphjsmit/tall-install-ddd-demo/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install-ddd-demo/actions/workflows/run-tests.yml)
 
-This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**. 
+This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**.
 
 **It basically runs the installation process for all of your favourite packages, so that you can jumpstart development!**
 
@@ -21,7 +20,6 @@ This package provides a **simple artisan command for Laravel** that can **fully 
 2. Install Pest instead of PHPUnit ⚙️
 3. Configure a Domain-Driven file structure (DDD)✨
 4. Install Browsersync for Valet users ⚡️
-
 
 ### What does it install?
 
@@ -37,7 +35,7 @@ This package provides a **simple artisan command for Laravel** that can **fully 
 
 #### What can it install?
 
-This package can also do the following things for you: 
+This package can also do the following things for you:
 
 - [Configure Browsersync for Laravel Valet users](https://ralphjsmit.com/laravel-valet-browsersync/)
 - [Install Pest testing framework instead of PHPUnit](https://pestphp.com)
@@ -47,7 +45,7 @@ This package can also do the following things for you:
 
 - Fortify installation
 
-The intention of this package is to do all the backend installation and not force you into anything frontend-wise. 
+The intention of this package is to do all the backend installation and not force you into anything frontend-wise.
 
 Missing your favourite package? Feel free to submit an issue or a PR with your proposal.
 
@@ -121,7 +119,6 @@ src/App
 ```
 
 For me, once I started using DDD I never wanted anything else. A good reference is the [Laravel Beyond CRUD](https://laravel-beyond-crud.com) course by Brent Roose.
-
 
 ## Install Pest with `tall-install --pest`
 

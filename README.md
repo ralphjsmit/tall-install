@@ -1,6 +1,6 @@
 # Laravel TALL Install Command
 
-[![run-tests](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml)
+[![Run Tests](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml/badge.svg?event=release)](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml)
 
 This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**. 
 

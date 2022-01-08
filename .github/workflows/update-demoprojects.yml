@@ -1,7 +1,6 @@
 name: "Update demo projects"
 
 on:
-  push:
   release:
     types: [ released ]
 

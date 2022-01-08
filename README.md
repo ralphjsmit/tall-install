@@ -1,4 +1,4 @@
-# Laravel TALL Install Command
+# Easy command to install the TALL-stack & jumpstart development🚀
 
 [![Run Package Tests](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install/actions/workflows/run-tests.yml)
 [![Run Laravel Tests (Pest) (normal version)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ralphjsmit/tall-install-demo/actions/workflows/run-tests.yml)
@@ -6,7 +6,12 @@
 
 This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**. 
 
-It basically runs the installation process for all of your favourite packages, so that you can jumpstart development. 
+**It basically runs the installation process for all of your favourite packages, so that you can jumpstart development!**
+
+👉 **[Check out a demo-project file's structure](https://github.com/ralphjsmit/tall-install-demo)**
+
+👉 **[Check out a demo-project with an automatically generated Domain-Driven file structure](https://github.com/ralphjsmit/tall-install-ddd-demo)**
+
 
 ### What does it install?
 

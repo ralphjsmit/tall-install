@@ -7,7 +7,7 @@ on:
 
 jobs:
   update_default_project:
-    name: "Update regular project"
+    name: "Update demo project"
     runs-on: ubuntu-latest
 
     steps:
@@ -19,5 +19,21 @@ jobs:
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/ralphjsmit/tall-install-demo/dispatches \
+          -d '{"event_type":"package_released"}' \
+          -u $WEBHOOK_ACCESS_SECRET:x-oauth-basic
+
+  update_ddd_project:
+    name: "Update demo project (DDD-version)"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Send webhook to ralphjsmit/tall-install-ddd-demo repo"
+        env:
+          WEBHOOK_ACCESS_SECRET: ${{ secrets.WEBHOOK_ACCESS_SECRET }}
+        run: |
+          curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/ralphjsmit/tall-install-ddd-demo/dispatches \
           -d '{"event_type":"package_released"}' \
           -u $WEBHOOK_ACCESS_SECRET:x-oauth-basic

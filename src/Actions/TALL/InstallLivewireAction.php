@@ -12,7 +12,8 @@ class InstallLivewireAction
     public function __construct(
         private ComposerInstallAction $composerInstallAction,
         private ReplaceNamespaceAction $replaceNamespaceAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {
@@ -21,7 +22,7 @@ class InstallLivewireAction
         $publishConfigProcess = new Process(['php', 'artisan', 'livewire:publish', '--config'], $basePath);
         $publishConfigProcess->run();
 
-        if ( ! $publishConfigProcess->isSuccessful() ) {
+        if (! $publishConfigProcess->isSuccessful()) {
             throw new LivewireCommandFailedException($publishConfigProcess);
         }
 
@@ -36,7 +37,7 @@ class InstallLivewireAction
         $livewireDiscoverProcess = new Process(['php', 'artisan', 'livewire:discover'], $basePath);
         $livewireDiscoverProcess->run();
 
-        if ( ! $livewireDiscoverProcess->isSuccessful() ) {
+        if (! $livewireDiscoverProcess->isSuccessful()) {
             throw new LivewireCommandFailedException($livewireDiscoverProcess);
         }
     }

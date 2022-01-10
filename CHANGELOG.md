@@ -2,6 +2,10 @@
 
 All notable changes to `tall-install` will be documented in this file.
 
+## 1.1.1 - 2022-01-10
+
+- Fixed: removed leftover `dump()` statement
+
 ## 1.1.0 - 2022-01-08
 
 - Added: Publish Livewire configuration file & update namespaces

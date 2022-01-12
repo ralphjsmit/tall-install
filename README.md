@@ -16,7 +16,7 @@ This package provides a **simple artisan command for Laravel** that can **fully 
 
 ## Features
 
-1. It runs the regular installation process for your favourite TALl-tools, so that you don't have to 🚀
+1. It runs the regular installation process for your favourite TALL-tools, so that you don't have to 🚀
 2. Install Pest instead of PHPUnit ⚙️
 3. Configure a Domain-Driven file structure (DDD)✨
 4. Install Browsersync for Valet users ⚡️

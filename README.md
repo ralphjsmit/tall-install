@@ -12,7 +12,7 @@ This package provides a **simple artisan command for Laravel** that can **fully 
 
 **[⚡️ Check out the release article and subscribe to my newsletter for updates](https://ralphjsmit.com/laravel-tall-install/)**
 
-### Demo projects
+## Demo projects
 
 👉 **[Check out a demo-project file's structure](https://github.com/ralphjsmit/tall-install-demo)**
 

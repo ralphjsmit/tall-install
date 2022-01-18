@@ -6,7 +6,7 @@ beforeEach(function () {
     $this->prefix = __DIR__ . '/../../../tmp/laravel-8.x-tall';
 });
 
-it('it can configure DDD for an application', function () {
+it('can configure DDD for an application', function () {
     expect($this->prefix . '/src')->not->toExist();
     expect($this->prefix . '/composer.json')->contents->not->toContain('"App\\": "src/App/",');
     expect($this->prefix . '/composer.json')->contents->not->toContain('"Domain\\": "src/Domain/",');

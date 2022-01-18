@@ -8,7 +8,11 @@
 
 This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**.
 
-**It basically runs the installation process for all of your favourite packages, so that you can jumpstart development!**
+**It basically runs the installation process for all of your favourite packages, so that you can start developing right away!**
+
+**[⚡️ Check out the release article and subscribe to my newsletter for updates](https://ralphjsmit.com/laravel-tall-install/)**
+
+## Demo projects
 
 👉 **[Check out a demo-project file's structure](https://github.com/ralphjsmit/tall-install-demo)**
 
@@ -16,7 +20,7 @@ This package provides a **simple artisan command for Laravel** that can **fully 
 
 ## Features
 
-1. It runs the regular installation process for your favourite TALl-tools, so that you don't have to 🚀
+1. It runs the regular installation process for your favourite TALL-tools, so that you don't have to 🚀
 2. Install Pest instead of PHPUnit ⚙️
 3. Configure a Domain-Driven file structure (DDD)✨
 4. Install Browsersync for Valet users ⚡️
@@ -48,8 +52,6 @@ This package can also do the following things for you:
 The intention of this package is to do all the backend installation and not force you into anything frontend-wise.
 
 Missing your favourite package? Feel free to submit an issue or a PR with your proposal.
-
-<br>
 
 ## Contents
 

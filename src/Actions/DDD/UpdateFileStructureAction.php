@@ -2,7 +2,7 @@
 
 namespace RalphJSmit\TallInstall\Actions\DDD;
 
-use RalphJSmit\Stubs\Stubs;
+use RalphJSmit\Filesystem\Stub;
 use RalphJSmit\TallInstall\Actions\Filesystem\CreateFileAction;
 use RalphJSmit\TallInstall\Actions\Filesystem\CreateFolderAction;
 use RalphJSmit\TallInstall\Actions\Filesystem\DeleteFolderAction;
@@ -13,12 +13,11 @@ class UpdateFileStructureAction
         private CreateFileAction $createFileAction,
         private CreateFolderAction $createFolderAction,
         private DeleteFolderAction $deleteFileAction,
-    ) {
-    }
+    ) {}
 
     public function execute(string $basePath): void
     {
-        $stubs = Stubs::dir($basePath)->namespaces([
+        $stubs = Stub::dir($basePath)->namespaces([
             'Support' => '/src/Support/',
             'Domain' => '/src/Domain/',
             'App' => '/src/App/',

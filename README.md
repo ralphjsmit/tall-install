@@ -8,7 +8,11 @@
 
 This package provides a **simple artisan command for Laravel** that can **fully scaffold** your application and **jumpstart development**.
 
-**It basically runs the installation process for all of your favourite packages, so that you can jumpstart development!**
+**It basically runs the installation process for all of your favourite packages, so that you can start developing right away!**
+
+**[⚡️ Check out the release article and subscribe to my newsletter for updates](https://ralphjsmit.com/laravel-tall-install/)**
+
+### Demo projects
 
 👉 **[Check out a demo-project file's structure](https://github.com/ralphjsmit/tall-install-demo)**
 

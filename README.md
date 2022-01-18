@@ -53,8 +53,6 @@ The intention of this package is to do all the backend installation and not forc
 
 Missing your favourite package? Feel free to submit an issue or a PR with your proposal.
 
-<br>
-
 ## Contents
 
 1. [Installation & usage](#installation--usage)

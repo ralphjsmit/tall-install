@@ -1,6 +1,5 @@
-- [x] Throw exception if process fails
 - Include buttons and other components?
 - Write integration tests with GitHub Actions
 - Speed-up process by combining composer calls into a single call / --no-update flag
 - Update rm command to use separate package
-- Switch to Alpine.js Focus
+- Add .DS_Store

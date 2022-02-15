@@ -1,8 +1,8 @@
 <?php
 
-use function RalphJSmit\PestPluginFilesystem\contents;
-
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
+
+use function RalphJSmit\PestPluginFilesystem\contents;
 
 beforeEach(function () {
     $this->prefix = __DIR__ . '/../../tmp/laravel-8.x';
@@ -10,7 +10,7 @@ beforeEach(function () {
 
 it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/package.json')->contents->not->toContain('"alpinejs":');
-    expect($this->prefix . '/package.json')->contents->not->toContain('"@alpinejs/trap":');
+    expect($this->prefix . '/package.json')->contents->not->toContain('"@alpinejs/focus":');
     expect($this->prefix . '/composer.json')->contents->not->toContain('"filament/tables":');
     expect($this->prefix . '/package.json')->contents->not->toContain('"tailwindcss":');
     expect($this->prefix . '/package.json')->contents->toContain('"postcss":');
@@ -44,7 +44,7 @@ it('can install the TALL-stack into any project', function () {
     app(TallInstallAction::class)->execute($this->prefix);
 
     expect($this->prefix . '/package.json')->contents->toContain('"alpinejs":');
-    expect($this->prefix . '/package.json')->contents->toContain('"@alpinejs/trap":');
+    expect($this->prefix . '/package.json')->contents->toContain('"@alpinejs/focus":');
     expect($this->prefix . '/composer.json')->contents->toContain('"filament/tables":');
     expect($this->prefix . '/package.json')->contents->toContain('"tailwindcss":');
     expect($this->prefix . '/package.json')->contents->toContain('"postcss":');

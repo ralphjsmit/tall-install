@@ -1,3 +1,5 @@
+
+
 /* Browsersync configuration with Laravel Valet */
 mix.disableSuccessNotifications();
 

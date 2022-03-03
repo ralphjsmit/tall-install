@@ -14,5 +14,5 @@ mix.browserSync({
         key: homedir + '/.config/valet/Certificates/' + domain + '.key',
         cert: homedir + '/.config/valet/Certificates/' + domain + '.crt'
     },
-    notify: false, //Disable notifications
+    notify: false, // Disable notifications
 })

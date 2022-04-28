@@ -13,9 +13,12 @@ class NpmAction
             array_merge(['npm'], $arguments),
             $basepath,
         );
+
+        $process->setTimeout(240);
+
         $process->run();
 
-        if (! $process->isSuccessful()) {
+        if ( ! $process->isSuccessful() ) {
             throw new NpmCommandFailedException($process);
         }
 

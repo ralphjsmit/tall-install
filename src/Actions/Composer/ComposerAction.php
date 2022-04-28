@@ -13,9 +13,12 @@ class ComposerAction
             array_merge(['composer'], $arguments),
             $basepath,
         );
+
+        $process->setTimeout(240);
+        
         $process->run();
 
-        if (! $process->isSuccessful()) {
+        if ( ! $process->isSuccessful() ) {
             throw new ComposerCommandFailedException($process);
         }
 

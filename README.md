@@ -94,10 +94,10 @@ You may use the `--ddd` or `-d` flag to configure DDD:
 php artisan tall-install --ddd
 ```
 
-This is the most powerful feature, as it rewrites your `/app` directory to this:
+I think this is the most powerful feature, as it rewrites your `/app` directory to this:
 
 ```
-/src/Support
+src/Support
      ├── App
          ├── Console
          ├── Exceptions

@@ -2,6 +2,10 @@
 
 All notable changes to `tall-install` will be documented in this file.
 
+## 1.3.0 - 2022-02-15
+
+- Install `@alpinejs/focus` instead of `@alpinejs/trap`
+
 ## 1.2.0 - 2022-01-20
 
 - Add support for Laravel 9

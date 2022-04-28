@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -9,8 +10,12 @@ module.exports = {
         './vendor/usernotnull/tall-toasts/config/**/*.php',
         './vendor/usernotnull/tall-toasts/resources/views/**/*.blade.php',
     ],
-    darkMode: false,
     theme: {
+       screens: {
+            'xxs': '375px',
+            'xs': '475px',
+            ...defaultTheme.screens,
+        },
         extend: {
             colors: {
                 danger: colors.rose,

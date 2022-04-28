@@ -18,7 +18,7 @@ class NpmAction
 
         $process->run();
 
-        if ( ! $process->isSuccessful() ) {
+        if (! $process->isSuccessful()) {
             throw new NpmCommandFailedException($process);
         }
 

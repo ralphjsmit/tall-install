@@ -38,17 +38,17 @@ class TallInstallCommand extends Command implements Pingable
         $this->ping('Preparing installation');
         $tallInstallAction->pingable($this)->execute($basePath);
 
-        if ( $browsersync ) {
+        if ($browsersync) {
             $this->ping('Installing Browsersync');
             $setupBrowsersyncAction->execute($basePath, $this->option('url'));
         }
 
-        if ( $pest ) {
+        if ($pest) {
             $this->ping('Installing Pest');
             $installPestAction->execute($basePath);
         }
 
-        if ( $ddd ) {
+        if ($ddd) {
             $this->ping('Installing DDD');
             $installDDDAction->execute($basePath);
         }

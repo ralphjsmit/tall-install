@@ -9,7 +9,8 @@ class InstallGitignoreAction
 {
     public function __construct(
         private FileGetContentsAction $fileGetContentsAction,
-    ) {}
+    ) {
+    }
 
     public function execute(string $basePath): void
     {

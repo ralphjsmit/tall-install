@@ -15,10 +15,10 @@ class ComposerAction
         );
 
         $process->setTimeout(240);
-        
+
         $process->run();
 
-        if ( ! $process->isSuccessful() ) {
+        if (! $process->isSuccessful()) {
             throw new ComposerCommandFailedException($process);
         }
 

@@ -80,6 +80,9 @@ Now run the `tall-install` command:
 
 ```bash
 php artisan tall-install
+
+# Run this to reindex potential changes in classes.
+composer dump-autoload
 ```
 
 You can use the following flags to install a particular package.

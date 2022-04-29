@@ -2,6 +2,10 @@
 
 All notable changes to `tall-install` will be documented in this file.
 
+## 1.3.1 - 2022-04-28
+
+- Tweak: set longer timeout of 240s instead of 60s for npm and Composer commands.
+
 ## 1.3.0 - 2022-02-15
 
 - Install `@alpinejs/focus` instead of `@alpinejs/trap`

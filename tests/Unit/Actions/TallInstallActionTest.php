@@ -1,8 +1,8 @@
 <?php
 
-use function RalphJSmit\PestPluginFilesystem\contents;
-
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
+
+use function RalphJSmit\PestPluginFilesystem\contents;
 
 beforeEach(function () {
     $this->prefix = __DIR__ . '/../../tmp/laravel-8.x';
@@ -38,6 +38,9 @@ it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/todo')->not->toExist();
     expect($this->prefix . '/.gitignore')->contents->not->toContain('vendor.nosync');
     expect($this->prefix . '/.gitignore')->contents->not->toContain('node_modules.nosync');
+    expect($this->prefix . '/.gitignore')->contents->not->toContain('public/css/*.css');
+    expect($this->prefix . '/.gitignore')->contents->not->toContain('public/js/*.js');
+    expect($this->prefix . '/.gitignore')->contents->not->toContain('public/mix-manifest.json');
     expect($this->prefix . '/composer.lock')->not->toExist();
     expect($this->prefix . '/package-lock.json')->not->toExist();
 
@@ -72,6 +75,9 @@ it('can install the TALL-stack into any project', function () {
     expect($this->prefix . '/todo')->toExist();
     expect($this->prefix . '/.gitignore')->contents->toContain('vendor.nosync');
     expect($this->prefix . '/.gitignore')->contents->toContain('node_modules.nosync');
+    expect($this->prefix . '/.gitignore')->contents->toContain('public/css/*.css');
+    expect($this->prefix . '/.gitignore')->contents->toContain('public/js/*.js');
+    expect($this->prefix . '/.gitignore')->contents->toContain('public/mix-manifest.json');
     expect($this->prefix . '/composer.lock')->not->toExist();
     expect($this->prefix . '/package-lock.json')->not->toExist();
 });

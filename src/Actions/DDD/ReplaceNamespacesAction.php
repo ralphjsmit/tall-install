@@ -6,8 +6,7 @@ class ReplaceNamespacesAction
 {
     public function __construct(
         private ReplaceNamespaceAction $replaceNamespaceAction,
-    ) {
-    }
+    ) {}
 
     public function execute(string $basePath): void
     {
@@ -16,6 +15,11 @@ class ReplaceNamespacesAction
                 'path' => '/config/app.php',
                 'search' => 'App\Providers',
                 'replace' => 'Support\App\Providers',
+            ],
+            [
+                'path' => '/config/auth.php',
+                'search' => 'App\Models\User::class',
+                'replace' => 'Support\Models\User::class',
             ],
             [
                 'path' => '/database/seeders/DatabaseSeeder.php',

@@ -44,6 +44,9 @@ it('can configure DDD for an application', function () {
     expect($this->prefix . '/config/app.php')
         ->contents->toContain('App\Providers')
         ->not->toContain('Support\App\Providers');
+    expect($this->prefix . '/config/auth.php')
+        ->contents->toContain('App\Models\User::class')
+        ->not->toContain('Support\Models\User::class');
     expect($this->prefix . '/database/seeders/DatabaseSeeder.php')->contents->not->toContain('Support\Models');
 
     app(InstallDDDAction::class)->execute($this->prefix);
@@ -86,6 +89,7 @@ it('can configure DDD for an application', function () {
         'Support\App\Exceptions\Handler::class'
     );
     expect($this->prefix . '/config/app.php')->contents->toContain('Support\App\Providers');
+    expect($this->prefix . '/config/auth.php')->contents->toContain('Support\Models\User::class');
     expect($this->prefix . '/database/seeders/DatabaseSeeder.php')->contents->toContain('Support\Models');
     expect($this->prefix . '/src/Support/App/Http/Kernel.php')->contents->toContain('\Support\App');
     expect($this->prefix . '/src/Support/App/Providers/AuthServiceProvider.php')->contents

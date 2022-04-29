@@ -29,22 +29,26 @@ class TallInstallCommand extends Command implements Pingable
         InstallPestAction $installPestAction,
         InstallDDDAction $installDDDAction,
     ): int {
+        $browsersync = $this->option('browsersync') || $this->confirm('Do you want to install Browsersync?', true);
+        $pest = $this->option('pest') || $this->confirm('Do you want to install Pest?', true);
+        $ddd = $this->option('ddd') || $this->confirm('Do you want to configure DDD?', true);
+
         $basePath = base_path();
 
         $this->ping('Preparing installation');
         $tallInstallAction->pingable($this)->execute($basePath);
 
-        if ($this->option('browsersync')) {
+        if ( $browsersync ) {
             $this->ping('Installing Browsersync');
             $setupBrowsersyncAction->execute($basePath, $this->option('url'));
         }
 
-        if ($this->option('pest')) {
+        if ( $pest ) {
             $this->ping('Installing Pest');
             $installPestAction->execute($basePath);
         }
 
-        if ($this->option('ddd')) {
+        if ( $ddd ) {
             $this->ping('Installing DDD');
             $installDDDAction->execute($basePath);
         }

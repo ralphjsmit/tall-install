@@ -1,12 +1,12 @@
 <?php
 
 use Mockery\MockInterface;
-use function Pest\Laravel\artisan;
 use RalphJSmit\TallInstall\Actions\DDD\InstallDDDAction;
 use RalphJSmit\TallInstall\Actions\General\InstallPestAction;
 use RalphJSmit\TallInstall\Actions\General\SetupBrowsersyncAction;
-
 use RalphJSmit\TallInstall\Actions\TallInstallAction;
+
+use function Pest\Laravel\artisan;
 
 it('can install', function () {
     $this->mock(TallInstallAction::class, function (MockInterface $mock) {
@@ -15,7 +15,10 @@ it('can install', function () {
             ->shouldReceive('execute')->once();
     });
 
-    artisan('tall-install');
+    artisan('tall-install')
+        ->expectsConfirmation('Do you want to install Browsersync?')
+        ->expectsConfirmation('Do you want to install Pest?')
+        ->expectsConfirmation('Do you want to configure DDD?');
 });
 
 it('can install BrowserSync with --browsersync flag', function () {
@@ -24,12 +27,15 @@ it('can install BrowserSync with --browsersync flag', function () {
             ->shouldReceive('pingable')->once()->andReturnSelf()
             ->shouldReceive('execute')->once();
     });
+
     app()->instance(
         SetupBrowsersyncAction::class,
         mock(SetupBrowsersyncAction::class)->expect(execute: fn () => null)
     );
 
-    artisan('tall-install --browsersync');
+    artisan('tall-install --browsersync')
+        ->expectsConfirmation('Do you want to install Pest?')
+        ->expectsConfirmation('Do you want to configure DDD?');
 });
 
 it('can install BrowserSync with -b flag', function () {
@@ -38,11 +44,15 @@ it('can install BrowserSync with -b flag', function () {
             ->shouldReceive('pingable')->once()->andReturnSelf()
             ->shouldReceive('execute')->once();
     });
+
     app()->instance(
         SetupBrowsersyncAction::class,
         mock(SetupBrowsersyncAction::class)->expect(execute: fn () => null)
     );
-    artisan('tall-install -b');
+
+    artisan('tall-install -b')
+        ->expectsConfirmation('Do you want to install Pest?')
+        ->expectsConfirmation('Do you want to configure DDD?');
 });
 
 it('can install BrowserSync with a custom url', function () {
@@ -56,7 +66,9 @@ it('can install BrowserSync with a custom url', function () {
         $mock->shouldReceive('execute')->with(base_path(), 'mydomain');
     });
 
-    artisan('tall-install -b --url=mydomain');
+    artisan('tall-install -b --url=mydomain')
+        ->expectsConfirmation('Do you want to install Pest?')
+        ->expectsConfirmation('Do you want to configure DDD?');
 });
 
 it('can install Pest with --pest flag', function () {
@@ -75,7 +87,9 @@ it('can install Pest with --pest flag', function () {
         mock(InstallPestAction::class)->expect(execute: fn () => null)
     );
 
-    artisan('tall-install --pest');
+    artisan('tall-install --pest')
+        ->expectsConfirmation('Do you want to install Browsersync?')
+        ->expectsConfirmation('Do you want to configure DDD?');
 });
 
 it('can install Pest with -p flag', function () {
@@ -94,7 +108,9 @@ it('can install Pest with -p flag', function () {
         mock(InstallPestAction::class)->expect(execute: fn () => null)
     );
 
-    artisan('tall-install -p');
+    artisan('tall-install -p')
+        ->expectsConfirmation('Do you want to install Browsersync?')
+        ->expectsConfirmation('Do you want to configure DDD?');
 });
 
 it('can install DDD with --ddd flag', function () {
@@ -119,7 +135,9 @@ it('can install DDD with --ddd flag', function () {
         $mock->shouldReceive('execute')->once();
     });
 
-    $this->artisan('tall-install --ddd');
+    $this->artisan('tall-install --ddd')
+        ->expectsConfirmation('Do you want to install Browsersync?')
+        ->expectsConfirmation('Do you want to install Pest?');
 });
 
 it('can install DDD with -d flag', function () {
@@ -144,5 +162,7 @@ it('can install DDD with -d flag', function () {
         $mock->shouldReceive('execute')->once();
     });
 
-    artisan('tall-install -d');
+    artisan('tall-install -d')
+        ->expectsConfirmation('Do you want to install Browsersync?')
+        ->expectsConfirmation('Do you want to install Pest?');
 });

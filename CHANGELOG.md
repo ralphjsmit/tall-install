@@ -2,6 +2,12 @@
 
 All notable changes to `tall-install` will be documented in this file.
 
+## 1.4.0 - 2022-04-29
+
+- Replace User::class namespace in auth.php
+- Add build files to GitIgnore
+- Make TallInstall command interactive
+
 ## 1.3.1 - 2022-04-28
 
 - Tweak: set longer timeout of 240s instead of 60s for npm and Composer commands.
